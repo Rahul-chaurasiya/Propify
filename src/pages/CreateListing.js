@@ -161,7 +161,7 @@ const CreateListing = () => {
     const docRef = await addDoc(collection(db, "listings"), formDataCopy);
     setLoading(false);
     toast.success("Listing Created!");
-    navigate(`/categoryName/${formDataCopy.type}/${docRef.id}`);
+    navigate(`/category/${formDataCopy.type}/${docRef.id}`);
   };
   return (
     <Layout>
@@ -408,7 +408,7 @@ const CreateListing = () => {
               id="images"
               name="images"
               onChange={onChangeHandler}
-              max="2"
+              max="6"
               accept=".jpg,.png,.jpeg,.svg"
               multiple
               required

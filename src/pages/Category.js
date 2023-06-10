@@ -92,7 +92,7 @@ const Category = () => {
     <Layout
       title={
         params.categoryName === "rent" ? "Properties For Rent" : "Properties For Sale"
-      }
+      } 
     >
       <div className="mt-3 container-fluid">
         <h1>

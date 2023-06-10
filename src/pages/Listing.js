@@ -5,6 +5,8 @@ import { db } from "../firebase.config";
 import { getAuth } from "firebase/auth";
 import { useNavigate, Link, useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
+import Carousel from 'react-bootstrap/Carousel';
+
 import "../styles/listing.css";
 import {
   FaBed,
@@ -20,7 +22,7 @@ const Listing = () => {
   const navigate = useNavigate(); //eslint-disable-line
   const params = useParams();
   const auth = getAuth(); //eslint-disable-line
-
+  
   useEffect(() => {
     const fetchListing = async () => {
       const docRef = doc(db, "listings", params.listingId);
@@ -45,10 +47,13 @@ const Listing = () => {
           {listing.imgUrls === undefined ? (
             <Spinner />
           ) : (
-            <div className = "container d-flex justify-content-center space-in-between align-items-center ml-1 mr-1">
-                  <img src={listing.imgUrls[0]} height={200} width={280} alt={listing.name}/>
-                  <img src={listing.imgUrls[1]} height={200} width={280} alt={listing.name}/>
-            </div>
+          <Carousel>
+            {listing.imgUrls.map((url, index) => (
+              <Carousel.Item interval = {2000}>
+                  <img src={listing.imgUrls[index]} className="d-block w-100" alt={listing.name} />
+                  </Carousel.Item>
+                ))}
+          </Carousel>
           )}
         </div>
         <div className="col-md-4 listing-container-col2">

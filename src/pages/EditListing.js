@@ -92,7 +92,7 @@ const EditListing = () => {
         setLoading(false);
       } else {
         navigate("/");
-        toast.error("Lisitng NOt Exists");
+        toast.error("Lisitng Not Exists");
       }
     };
     fetchListing();
@@ -198,7 +198,7 @@ const EditListing = () => {
     !formDataCopy.offer && delete formDataCopy.discountedPrice;
     const docRef = doc(db, "listings", params.listingId);
     await updateDoc(docRef, formDataCopy);
-    toast.success("Listing updated!!");
+    toast.success("Listing updated!");
     setLoading(false);
     navigate(`/category/${formDataCopy.type}/${docRef.id}`);
   };

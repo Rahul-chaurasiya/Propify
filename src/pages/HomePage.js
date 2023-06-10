@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Slider from "../components/Slider";
 import Layout from "./../components/Layout/Layout";
 import "../styles/homepage.css";
 
@@ -11,6 +12,7 @@ const HomePage = () => {
     "https://images.unsplash.com/photo-1626178793926-22b28830aa30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvcGVydHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60";
   return (
     <Layout>
+      <Slider/>
       <div className="home-cat row d-flex align-items-center justify-content-center">
         <h1>Best Choices at Best Rates..</h1>
         <div className="col-md-5 ">
