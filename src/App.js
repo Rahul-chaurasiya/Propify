@@ -19,7 +19,7 @@ function App() {
   return (
     <BrowserRouter>
       <ToastContainer />
-      <Routes>
+      <Routes> 
         <Route path="/" element={<HomePage />} />
         <Route path="/offers" element={<Offers />} />
         <Route path="/category/:categoryName" element={<Category />} />
